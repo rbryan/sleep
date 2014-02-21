@@ -23,6 +23,7 @@ int parse_time(char *ts){
 	}
 	return 12*60+hour*60+min;
 }
+
 void print_time(int time){
 	int h;
 	int m;
@@ -33,17 +34,19 @@ void print_time(int time){
 		if(h>12){
 			h=h-12;
 		}
-		printf("%d:%02dpm\n",h,m);
+		printf("%d:%02dpm",h,m);
 	}else{
 		if(h==0) h=12;
-		printf("%d:%02dam\n",h,m);
+		printf("%d:%02dam",h,m);
 	}
 }
+
 void print_wakeup(int time){
 	int i;
 	time = time+14;//time to fall asleep;
 	for(i=1; i<7; i++){
 		print_time(time+90*i);
+		putchar('\n');
 	}
 
 }
@@ -51,9 +54,15 @@ void print_wakeup(int time){
 int main(int argc, char **argv){
 	
 	int time;
+	if(argc < 2){
+		fprintf(stderr,"Usage: slept <current time>\n");
+		fprintf(stderr,"Time format: hh:mm{am,pm}\nAM and PM are case insensitive.\n");
+		exit(1);
+	}
 	time = parse_time(argv[1]);
+	printf("If you to bed at %s you should wake up at one of the following times:\n",argv[1]);
 	print_wakeup(time);
-	print_time(time);
+	return 0;
 
 }
 

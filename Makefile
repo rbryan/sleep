@@ -2,5 +2,5 @@
 CC=gcc
 CFLAGS=-g -O0 -lm
 
-slept:
+slept: slept.c Makefile
 	$(CC) $(CFLAGS) slept.c -o slept
