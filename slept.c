@@ -60,7 +60,7 @@ int main(int argc, char **argv){
 		exit(1);
 	}
 	time = parse_time(argv[1]);
-	printf("If you to bed at %s you should wake up at one of the following times:\n",argv[1]);
+	printf("If you go to bed at %s you should wake up at one of the following times:\n",argv[1]);
 	print_wakeup(time);
 	return 0;
 
