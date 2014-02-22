@@ -42,6 +42,7 @@ void print_time(int time){
 }
 void print_wakeup(int time){
 	int i;
+	time = time+14;//time to fall asleep;
 	for(i=1; i<7; i++){
 		print_time(time+90*i);
 	}
