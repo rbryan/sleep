@@ -2,5 +2,5 @@
 CC=gcc
 CFLAGS=-g -O0 -lm
 
-sleeptime:
-	$(CC) $(CFLAGS) sleeptime.c
+slept:
+	$(CC) $(CFLAGS) slept.c -o slept
