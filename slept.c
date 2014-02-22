@@ -29,15 +29,14 @@ void print_time(int time){
 	h = time/60;
 	m = time%60;
 	h = h % 24;
-	printf("%d,%d\n",h,m);
 	if(h >= 12){
 		if(h>12){
 			h=h-12;
 		}
-		printf("%d:%dpm\n",h,m);
+		printf("%d:%02dpm\n",h,m);
 	}else{
 		if(h==0) h=12;
-		printf("%d:%dam\n",h,m);
+		printf("%d:%02dam\n",h,m);
 	}
 }
 void print_wakeup(int time){
